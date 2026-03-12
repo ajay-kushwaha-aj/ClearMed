@@ -1,79 +1,483 @@
-# 🏥 ClearMed - India’s first crowdsourced treatment outcome intelligence platform.
+# 🏥 ClearMed
+### Transparent Healthcare Decisions
 
-A full-stack web application for managing medical records, prescriptions, and hospital data with OCR (Optical Character Recognition) capabilities for digitizing paper-based medical documents.
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Status](https://img.shields.io/badge/status-active-success)
+![Node](https://img.shields.io/badge/backend-Node.js-green)
+![Next.js](https://img.shields.io/badge/frontend-Next.js-black)
+![PostgreSQL](https://img.shields.io/badge/database-PostgreSQL-blue)
+![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen)
+![Hackathon](https://img.shields.io/badge/Hackathon-India%20Innovates%202026-orange)
 
-## 🎯 Project Overview
+ClearMed is a **Healthcare Intelligence Platform** designed to help patients make **data-driven medical decisions** by providing hospital comparisons, treatment cost transparency, and treatment outcome insights.
 
-ClearMed is designed to streamline medical record management by providing:
-- **Digital Prescription Processing** - Upload and extract data from prescription images
-- **Hospital Directory** - Browse and manage hospital information
-- **Medical Records** - Centralized storage for patient health documents
-- **Symptom Checker** - Intelligent symptom analysis
-- **OCR Technology** - Automatic text extraction from medical documents
-
----
-
-## ✨ Key Features
-
-### Backend (Express.js)
-- 🔐 **Authentication** - JWT-based user authentication with bcrypt password hashing
-- 🏥 **Hospital Management** - API endpoints for hospital data
-- 💊 **Prescription Processing** - Image upload and OCR text extraction
-- 🔍 **Symptom Analysis** - Advanced symptom tracking and analysis
-- 📋 **Bill Management** - Medical bill organization and tracking
-- 🖼️ **Image Processing** - Multer-based file uploads
-- 📚 **Tesseract OCR** - Accurate text extraction from medical documents
-
-### Frontend (Next.js)
-- ⚡ **Modern UI** - Next.js 15+ with App Router
-- 🎨 **Styling** - Tailwind CSS for responsive design
-- 📱 **Responsive Layout** - Mobile-first approach
-- 🔤 **Font Optimization** - Next.js font optimization with Geist
-- ✅ **Code Quality** - ESLint configuration for code standards
-
-### Additional Features
-- 🐳 **Docker Support** - Containerized deployment ready
-- 🗄️ **Database** - Prisma ORM integration
-- 🌐 **CORS** - Cross-origin resource sharing enabled
-- 📦 **Modular Routes** - Organized API route structure
+The platform aggregates **anonymized hospital bill data**, hospital information, and patient feedback to generate **transparent healthcare insights**.
 
 ---
 
-## 🛠️ Tech Stack
+# 🚨 Problem
 
-### Frontend
-- **Framework**: Next.js 15+
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Package Manager**: npm/yarn
+Healthcare decision-making is extremely difficult for patients.
 
-### Backend
-- **Framework**: Express.js 5.2.1
-- **Language**: JavaScript (ES Modules)
-- **OCR**: Tesseract.js 7.0.0
-- **Authentication**: JWT (jsonwebtoken)
-- **Password Hashing**: bcrypt 6.0.0
-- **File Upload**: Multer 2.1.1
-- **CORS**: 2.8.6
+Major challenges include:
 
-### Database & ORM
-- **ORM**: Prisma (configured)
-- **Support**: PostgreSQL/MySQL ready
+- ❌ Patients don't know **which hospital is best for a treatment**
+- ❌ Medical costs vary significantly between hospitals
+- ❌ Healthcare pricing lacks transparency
+- ❌ Existing platforms focus on **reviews instead of outcomes**
+- ❌ Patients often know **symptoms but not diseases**
 
-### Testing
-- **Framework**: Jest 30.3.0
-- **HTTP Testing**: Supertest 7.2.2
+These issues lead to **unexpected medical expenses and poor treatment decisions**.
 
 ---
 
-## 📥 Installation
+# 💡 Solution
 
-### Prerequisites
-- Node.js 18+ installed
-- npm or yarn package manager
-- Docker (optional, for containerized deployment)
+ClearMed provides a **healthcare intelligence platform** that allows users to:
 
-### Clone Repository
-```bash
-git clone https://github.com/ajay-kushwaha-aj/ClearMed.git
-cd ClearMed
+✔ Search hospitals by **symptoms, disease, or treatment**  
+✔ Compare hospitals using **real treatment cost data**  
+✔ View **doctor expertise and hospital metrics**  
+✔ Upload **hospital bills for cost transparency**
+
+The platform transforms fragmented healthcare data into **actionable insights for patients**.
+
+---
+
+# ✨ Key Features
+
+## 🔎 Symptom Based Search
+
+Users can enter symptoms and receive possible conditions and specialists.
+
+Example:
+
+```
+
+Input: knee pain while walking
+Output: arthritis, ligament injury
+Specialist: orthopedic surgeon
+
+```
+
+---
+
+## 🏥 Treatment Based Hospital Discovery
+
+Users can search hospitals for treatments.
+
+Example:
+
+```
+
+Search: Knee Replacement Surgery
+
+```
+
+Results include:
+
+- hospital list
+- doctor expertise
+- average treatment cost
+- hospital rating
+
+---
+
+## 📊 Hospital Comparison
+
+Users can compare hospitals using:
+
+- treatment cost
+- doctor experience
+- hospital rating
+- recovery outcomes
+- distance
+
+---
+
+## 📄 Bill Upload System
+
+Patients can upload hospital bills.
+
+Accepted formats:
+
+- PDF
+- Image
+
+The system extracts:
+
+- hospital name
+- treatment
+- cost
+- cost breakdown
+
+All **personal information is automatically anonymized**.
+
+---
+
+# 📈 Cost Intelligence Dashboard
+
+ClearMed aggregates bill data to generate treatment cost insights.
+
+Example:
+
+```
+
+Knee Replacement Surgery Cost in Delhi
+
+Average Cost: ₹2,10,000
+Minimum Cost: ₹1,40,000
+Maximum Cost: ₹3,20,000
+
+```
+
+---
+
+# 🏗 System Architecture
+
+```
+
+User
+↓
+Frontend (Next.js)
+↓
+API Gateway (Node.js)
+↓
+Services
+├ Hospital Search Service
+├ Bill Intelligence Service
+├ Symptom Analysis Service
+↓
+PostgreSQL Database
+
+```
+
+---
+
+# ⚙ Technology Stack
+
+## Frontend
+- Next.js
+- React
+- Tailwind CSS
+
+## Backend
+- Node.js
+- Express.js
+- TypeScript
+
+## Database
+- PostgreSQL
+- Prisma ORM
+
+## AI / Data Processing
+- Tesseract OCR
+- spaCy NLP
+- Python Microservices
+
+## Deployment
+Frontend: Vercel  
+Backend: Docker + AWS  
+Database: AWS RDS
+
+---
+
+# 📂 Project Structure
+
+```
+
+clearmed
+│
+├ frontend
+│   ├ pages
+│   ├ components
+│   ├ styles
+│
+├ backend
+│   ├ routes
+│   ├ controllers
+│   ├ services
+│   ├ utils
+│
+├ database
+│   ├ prisma
+│
+├ ai
+│   ├ symptom_engine.py
+│   ├ bill_parser.py
+│
+├ docs
+│   ├ architecture.md
+│   ├ api_spec.md
+│
+└ README.md
+
+```
+
+---
+
+# 🔗 API Endpoints
+
+Base URL
+
+```
+
+/api/v1
+
+```
+
+### Get Hospitals
+
+```
+
+GET /api/v1/hospitals
+
+```
+
+### Upload Bill
+
+```
+
+POST /api/v1/bills
+
+```
+
+### Symptom Analysis
+
+```
+
+POST /api/v1/symptoms/analyze
+
+```
+
+---
+
+# 🗄 Data Models
+
+## Hospital
+
+```
+
+id
+name
+city
+type
+beds
+accreditation
+rating
+
+```
+
+## Doctor
+
+```
+
+id
+name
+specialization
+experience_years
+hospital_id
+
+```
+
+## Treatment
+
+```
+
+id
+name
+specialization
+avg_cost
+
+```
+
+## Bill
+
+```
+
+id
+hospital_id
+treatment_id
+total_cost
+implant_cost
+room_charges
+date
+
+```
+
+---
+
+# 🚀 Getting Started
+
+## Clone Repository
+
+```
+
+git clone [https://github.com/yourusername/clearmed.git](https://github.com/yourusername/clearmed.git)
+cd clearmed
+
+```
+
+---
+
+## Install Dependencies
+
+```
+
+npm install
+
+```
+
+---
+
+## Setup Environment
+
+Create `.env` file
+
+```
+
+DATABASE_URL=postgresql://user:password@localhost:5432/clearmed
+JWT_SECRET=your_secret
+
+```
+
+---
+
+## Run Database
+
+```
+
+npx prisma migrate dev
+
+```
+
+---
+
+## Start Backend
+
+```
+
+cd backend
+npm run dev
+
+```
+
+---
+
+## Start Frontend
+
+```
+
+cd frontend
+npm run dev
+
+```
+
+Open browser:
+
+```
+
+[http://localhost:3000](http://localhost:3000)
+
+```
+
+---
+
+# 🧪 Testing
+
+## Unit Tests
+
+```
+
+npm run test
+
+```
+
+Framework: **Jest**
+
+---
+
+## Integration Tests
+
+Framework: **Supertest**
+
+---
+
+## End-to-End Tests
+
+Framework: **Cypress**
+
+---
+
+# 🔐 Security and Privacy
+
+ClearMed follows strict privacy practices.
+
+Sensitive data removed from uploaded bills:
+
+- patient name
+- phone number
+- address
+- insurance ID
+- patient ID
+
+Only **anonymized medical cost data** is stored.
+
+---
+
+# 🛣 Future Roadmap
+
+Upcoming features:
+
+- 🤖 AI recovery prediction
+- 📊 doctor performance analytics
+- 🏥 insurance integration
+- 💬 telemedicine
+- 🌍 national treatment cost intelligence network
+
+---
+
+# 🤝 Contribution
+
+Contributions are welcome.
+
+Steps:
+
+```
+
+Fork repository
+Create feature branch
+Commit changes
+Submit pull request
+
+```
+
+---
+
+# 📜 License
+
+MIT License
+
+---
+
+# 🙏 Acknowledgments
+
+Healthcare transparency research sources:
+
+- WHO healthcare data
+- Ayushman Bharat hospital datasets
+
+---
+
+# 📬 Contact
+
+Project: **ClearMed**
+
+For collaboration or queries:
+
+ajaykushwahaa.aj@gmail.com
+
+---
+
+⭐ If you find this project useful, consider **starring the repository**!
+```
