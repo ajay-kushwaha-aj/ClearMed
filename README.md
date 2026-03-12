@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏥 ClearMed - Medical Records & Prescription Management
 
-## Getting Started
+A full-stack web application for managing medical records, prescriptions, and hospital data with OCR (Optical Character Recognition) capabilities for digitizing paper-based medical documents.
 
-First, run the development server:
+## 🎯 Project Overview
 
+ClearMed is designed to streamline medical record management by providing:
+- **Digital Prescription Processing** - Upload and extract data from prescription images
+- **Hospital Directory** - Browse and manage hospital information
+- **Medical Records** - Centralized storage for patient health documents
+- **Symptom Checker** - Intelligent symptom analysis
+- **OCR Technology** - Automatic text extraction from medical documents
+
+---
+
+## ✨ Key Features
+
+### Backend (Express.js)
+- 🔐 **Authentication** - JWT-based user authentication with bcrypt password hashing
+- 🏥 **Hospital Management** - API endpoints for hospital data
+- 💊 **Prescription Processing** - Image upload and OCR text extraction
+- 🔍 **Symptom Analysis** - Advanced symptom tracking and analysis
+- 📋 **Bill Management** - Medical bill organization and tracking
+- 🖼️ **Image Processing** - Multer-based file uploads
+- 📚 **Tesseract OCR** - Accurate text extraction from medical documents
+
+### Frontend (Next.js)
+- ⚡ **Modern UI** - Next.js 15+ with App Router
+- 🎨 **Styling** - Tailwind CSS for responsive design
+- 📱 **Responsive Layout** - Mobile-first approach
+- 🔤 **Font Optimization** - Next.js font optimization with Geist
+- ✅ **Code Quality** - ESLint configuration for code standards
+
+### Additional Features
+- 🐳 **Docker Support** - Containerized deployment ready
+- 🗄️ **Database** - Prisma ORM integration
+- 🌐 **CORS** - Cross-origin resource sharing enabled
+- 📦 **Modular Routes** - Organized API route structure
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: Next.js 15+
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Package Manager**: npm/yarn
+
+### Backend
+- **Framework**: Express.js 5.2.1
+- **Language**: JavaScript (ES Modules)
+- **OCR**: Tesseract.js 7.0.0
+- **Authentication**: JWT (jsonwebtoken)
+- **Password Hashing**: bcrypt 6.0.0
+- **File Upload**: Multer 2.1.1
+- **CORS**: 2.8.6
+
+### Database & ORM
+- **ORM**: Prisma (configured)
+- **Support**: PostgreSQL/MySQL ready
+
+### Testing
+- **Framework**: Jest 30.3.0
+- **HTTP Testing**: Supertest 7.2.2
+
+---
+
+## 📥 Installation
+
+### Prerequisites
+- Node.js 18+ installed
+- npm or yarn package manager
+- Docker (optional, for containerized deployment)
+
+### Clone Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/ajay-kushwaha-aj/ClearMed.git
+cd ClearMed
