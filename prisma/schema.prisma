@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String
+  email    String   @unique
+  password String
+}
+
+model Hospital {
+  id              Int         @id @default(autoincrement())
+  name            String
+  city            String
+  rating          Float
+  specializations String      // Comma separated for MVP
+  type            String      @default("Private")
+  beds            Int         @default(100)
+  nabh_status     Boolean     @default(false)
+  distance        Float       @default(5.0)
+  success_rate    Float       @default(85.0)
+  doctors         Doctor[]
+  feedbacks       Feedback[]
+  bills           Bill[]
+  reviews         Review[]
+}
+
+model Doctor {
+  id               Int      @id @default(autoincrement())
+  name             String
+  specialization   String
+  experience_years Int
+  hospital_id      Int
+  hospital         Hospital @relation(fields: [hospital_id], references: [id])
+}
+
+model Treatment {
+  id             Int      @id @default(autoincrement())
+  name           String
+  specialization String
+  avg_cost       Float
+  bills          Bill[]
+}
+
+model Bill {
+  id              Int      @id @default(autoincrement())
+  hospital_id     Int
+  treatment_id    Int
+  total_cost      Float
+  implant_cost    Float
+  room_charges    Float
+  date            DateTime @default(now())
+  hospital        Hospital @relation(fields: [hospital_id], references: [id])
+  treatment       Treatment @relation(fields: [treatment_id], references: [id])
+}
+
+model Feedback {
+  id                 Int      @id @default(autoincrement())
+  hospital_id        Int
+  treatment_id       Int
+  satisfaction_score Float
+  recovery_days      Int
+  complication_flag  Boolean
+  hospital           Hospital @relation(fields: [hospital_id], references: [id])
+}
+
+model Review {
+  id           Int      @id @default(autoincrement())
+  hospital_id  Int
+  treatment_id Int?
+  user_name    String
+  rating       Float
+  review_text  String
+  date         DateTime @default(now())
+  hospital     Hospital @relation(fields: [hospital_id], references: [id])
+}
