@@ -1,6 +1,7 @@
 # 🏥 ClearMed
 ### Transparent Healthcare Decisions
 
+![License](https://img.shields.io/badge/license-MIT-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
 ![Node](https://img.shields.io/badge/backend-Node.js-green)
 ![Next.js](https://img.shields.io/badge/frontend-Next.js-black)
