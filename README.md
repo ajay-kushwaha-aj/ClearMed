@@ -1,4 +1,4 @@
-# 🏥 ClearMed - Medical Records & Prescription Management
+# 🏥 ClearMed - India’s first crowdsourced treatment outcome intelligence platform.
 
 A full-stack web application for managing medical records, prescriptions, and hospital data with OCR (Optical Character Recognition) capabilities for digitizing paper-based medical documents.
 
